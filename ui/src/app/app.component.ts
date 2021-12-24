@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GetMenuInput, MenuItemDto } from './proxy/menu';
+import { MenuService } from './proxy/menu/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -7,43 +9,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  data: any = [
-    {
-      "text": "Order",
-      "submenu": [
-        {
-          "text": "List",
-          "url": "/order"
-        },
-        {
-          "text": "Add",
-          "url": "/order/add"
-        },
-        {
-          "text": "Update",
-          "url": "/order/update"
-        }
-      ]
-    },
-    {
-      "text": "Order Statu",
-      "submenu": [
-        {
-          "text": "List",
-          "url": "/order-statu"
-        },
-        {
-          "text": "Add",
-          "url": "/order-statu/add"
-        },
-        {
-          "text": "Update",
-          "url": "/order-statu/update"
-        }
-      ]
-    }
-  ];
+  selected = 'option2';
+  menuResponse: any;
+  menuInput : GetMenuInput = {
+    isActive : true
+  };
 
+  constructor(public menuService :MenuService) {
+    this.fillMenuItems();
+  }
+
+  fillMenuItems(){
+    
+    this.menuService.getList(this.menuInput).subscribe(x=> { this.menuResponse = x.items; });
+  }
+
+  changeFilter(){
+    this.fillMenuItems();
+  }
   ngOnInit(): void {
 
   }
