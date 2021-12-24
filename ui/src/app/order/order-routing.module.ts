@@ -15,7 +15,7 @@ const routes: Routes = [
     children: [{ path: '', component: AddOrderComponent }],
   },
   {
-    path: 'update/:id',
+    path: 'update',
     children: [{ path: '', component: UpdateOrderComponent }],
   }
 ];

@@ -1,0 +1,15 @@
+<div id="sidebar" class="dark-blue-bg">
+	<div class="group" *ngFor="let item of result; let i = index">
+		<label *ngIf="item.submenu.length" class="light-blue-bg">{{ item.text }}</label>
+		<a *ngIf="!item.submenu.length" 
+			class="light-blue-bg">{{ item.text }}</a>
+		<div class="sub-menu" >
+			<ul *ngFor="let menu of item.submenu">
+				<li>
+					<a [routerLink]="menu.url" >{{ menu.text }}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="right-border"></div>
+</div>

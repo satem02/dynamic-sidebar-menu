@@ -12,6 +12,6 @@ export class OrderStatuComponent implements OnInit {
   ngOnInit(): void {}
 
   edit() {
-    this.router.navigate(["order-statu/update", 1]);
+    this.router.navigate(["order-statu/update"]);
   }
 }

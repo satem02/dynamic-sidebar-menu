@@ -6,5 +6,46 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ui';
+
+  data: any = [
+    {
+      "text": "Order",
+      "submenu": [
+        {
+          "text": "List",
+          "url": "/order"
+        },
+        {
+          "text": "Add",
+          "url": "/order/add"
+        },
+        {
+          "text": "Update",
+          "url": "/order/update"
+        }
+      ]
+    },
+    {
+      "text": "Order Statu",
+      "submenu": [
+        {
+          "text": "List",
+          "url": "/order-statu"
+        },
+        {
+          "text": "Add",
+          "url": "/order-statu/add"
+        },
+        {
+          "text": "Update",
+          "url": "/order-statu/update"
+        }
+      ]
+    }
+  ];
+
+  ngOnInit(): void {
+
+  }
+
 }

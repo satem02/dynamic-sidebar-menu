@@ -12,6 +12,6 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {}
 
   edit() {
-    this.router.navigate(["order/update", 1]);
+    this.router.navigate(["order/update"]);
   }
 }
